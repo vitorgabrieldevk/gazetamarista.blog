@@ -102,36 +102,13 @@ class IndexController extends Zend_Controller_Action {
      * Página inicial
      */
     public function indexAction() {
-        // Banners
-        $banners = (new Admin_Model_Banners())->fetchAll(array("ativo = 1"), "ordenacao ASC");
 
-        // Notícias
-        $model_blogs = new Admin_Model_Blogs();
-        $select_blogs = $model_blogs->select()
-            ->where("ativo = 1")
-            ->where("data <= CURDATE()")
-            ->order("data DESC")
-            ->order("idblog DESC")
-            ->limit(3);
+        $config = Zend_Registry::get("config");
+        $path = $config->gazetamarista->config->basepath;
 
-        // Fetch
-        $blogs = $model_blogs->fetchAll($select_blogs);
+        // Assina na View ( index.tpl )
+        $this->view->path = $path;
 
-        // Serviços
-        $servicos = (new Admin_Model_Servicos())->fetchAll(array("ativo = 1"), "ordenacao ASC");
-
-        // Sobre
-        $sobre = (new Admin_Model_Sobre())->fetchRow(array('idsobre = ?' => 1));
-
-        // Clientes
-        $clientes = (new Admin_Model_Clientes())->fetchAll(array("ativo = 1"),"ordem ASC");
-
-        // View
-        $this->view->clientes   = $clientes;
-        $this->view->banners    = $banners;
-        $this->view->noticias   = $blogs;
-        $this->view->servicos   = $servicos;
-        $this->view->sobre      = $sobre;
     }
 
     /**
