@@ -1,0 +1,102 @@
+#fotos .panel {
+    padding:1.40rem;
+}
+#fotos .photos li:first-of-type .imagem:before {
+    -webkit-font-smoothing:antialiased;
+    color:#ffd700;
+    content:"\FA72";
+    font:normal normal normal 50px/1 "Material Design Icons";
+    left:10px;
+    position:absolute;
+    text-rendering:auto;
+    top:14px;
+    z-index:1;
+    height:38px;
+    line-height:38px;
+}
+#fotos .panel .acoes-galeria {
+    position:relative;
+}
+#fotos .panel .acoes-galeria a {
+    border-radius:50%;
+    color:#fff;
+    display:inline-block;
+    font-family:monospace;
+    font-size:20px;
+    height:30px;
+    left:-15px;
+    line-height:30px;
+    position:absolute;
+    text-align:center;
+    top:-15px;
+    width:30px;
+    z-index:10;
+}
+#fotos .panel .acoes-galeria a.btn-remove-image {
+    background-color:#e63d33;
+}
+#fotos .panel .acoes-galeria a.btn-capa-image {
+    background-color:#3c4a9e;
+}
+#fotos .panel .acoes-galeria .delete:before {
+    -webkit-font-smoothing:antialiased;
+    content:"\F1C0";
+    font:normal normal normal 18px/1 "Material Design Icons";
+    text-rendering:auto;
+    line-height:30px;
+}
+#fotos .panel .legenda input {
+    margin-bottom:0;
+}
+
+.arquivo-upload-avancado {
+    margin-bottom:22px;
+    position:relative;
+    text-align:left;
+}
+.arquivo-upload-avancado label {
+    color:#303030;
+    font-size:14px;
+}
+.arquivo-upload-avancado label span {
+
+}
+.arquivo-upload-avancado input[type=file] {
+    left:-9999px;
+    margin-bottom:0;
+    position:absolute;
+    top:-9999px;
+    width:0;
+}
+.arquivo-upload-avancado .arquivo_tmp {
+    border-radius:5px;
+    background:#04a9f4;
+    color:#fff;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:600;
+    height:80px;
+    line-height:76px;
+    padding-left:20px;
+    padding-right:20px;
+    position:relative;
+}
+.arquivo-upload-avancado .arquivo_tmp:hover {
+    background:#3c4a9e;
+}
+.arquivo-upload-avancado .arquivo_tmp.off {
+    cursor:default;
+    pointer-events:none;
+}
+.arquivo-upload-avancado .arquivo_tmp .solte-arquivos {
+    line-height:78px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.arquivo-upload-avancado .arquivo_tmp .solte-arquivos .input-file-upload:before {
+    color:#fff;
+    font-size:22px;
+    margin-left:10px;
+    margin-right:0;
+}

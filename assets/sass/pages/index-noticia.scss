@@ -1,0 +1,262 @@
+@import "../vars";
+
+#site-corpo.main-noticias {
+    background-color: $primary-color;
+    padding-top: 92px;
+
+    .uk-container {
+        @include tablet_large {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        @include tablet_small_down {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+
+    .noticias-container {
+        background-color: #ededed;
+
+        .page-header {
+            padding: 80px 0;
+
+            h1 {
+                font-size: 32px;
+                margin-bottom: 10px;
+
+                @include tablet_small_down {
+                    font-size: 32px;
+                }
+
+                @include mobile {
+                    font-size: 26px;
+                }
+            }
+
+            @include tablet_small_down {
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .titulo-pagina {
+                @include tablet_small_down {
+                    text-align: center;
+                }
+            }
+        }
+
+        .form-busca {
+            width: 100%;
+
+            @include desktop {
+                width: 565px;
+            }
+
+            @include tablet_large {
+                width: 365px;
+            }
+
+            .uk-input {
+                border-radius: 0;
+
+                @include tablet_large_down {
+                    height: 50px;
+                }
+            }
+
+            &:not(.busca-preenchida) {
+                .btn-limpar {
+                    display: none !important;
+                }
+            }
+
+            &.busca-preenchida {
+                input {
+                    padding-right: 40px;
+                }
+            }
+
+            input {
+                padding-right: 48px;
+                padding-left: 25px;
+                font-size: 14px;
+                border: none;
+
+                &::placeholder {
+                    font-weight: 400;
+                    color: #555555;
+                }
+            }
+
+            .btn-enviar {
+                padding: 0 20px 0 4px;
+                width: 48px;
+                background: none;
+                font-size: 14px;
+                color: #000;
+            }
+
+            .btn-limpar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 18px;
+                right: 16px;
+                padding: 0;
+                width: 26px;
+                height: 26px;
+                line-height: 1;
+                font-size: 10px;
+                color: #fff;
+                background: #000;
+                border-radius: 50%;
+
+                @include tablet_large_down {
+                    top: 12px;
+                }
+            }
+        }
+
+        .bloco-contato {
+            position: fixed;
+            z-index: 1;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+
+            @include tablet_small_down {
+                bottom: 25px;
+                right: 25px;
+            }
+
+            @include mobile {
+                bottom: 20px;
+                right: 5%;
+            }
+        }
+    }
+
+    .conteudo {
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        @include tablet_small_down {
+            padding-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        .coluna-conteudo {
+            .lista-itens {
+                .lista-item {
+                    display: block;
+                    color: #555555;
+                    font-size: 12px;
+                    font-weight: bold;
+
+                    figure {
+                        background-color: #000;
+                        border-radius: 6px;
+
+                        img {
+                            border-radius: 5px;
+                            width: 100%;
+
+                            &:hover {
+                                opacity: 0.6;
+                                transition: 0.4s ease-in-out;
+                            }
+                        }
+                    }
+
+                    h3 {
+                        color: $secondary-color;
+                        margin-bottom: 10px;
+                        margin-top: 10px;
+                        font-size: 16px;
+                        line-height: 22px;
+                    }
+
+                    .categoria {
+                        margin-top: 15px;
+                        font-weight: 600;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                        color: #8f8f8f;
+                    }
+
+                    .data {
+                        margin-bottom: 13px;
+                        font-weight: 600;
+                        color: #8f8f8f;
+
+                        @include tablet_large_down {
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    .uk-button {
+                        border-radius: 100px;
+                        font-weight: 400 !important;
+
+                        @include tablet_large_down {
+                            line-height: 34px;
+                            padding: 0 13px;
+                            font-size: 12px;
+                        }
+
+                        @include mobile {
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        i {
+                            margin-left: 30px;
+
+                            @include tablet_large_down {
+                                margin-left: 15px;
+                            }
+
+                            @include mobile {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            nav {
+                .uk-pagination {
+                    margin: 0;
+                    padding: 60px 0;
+
+                    li {
+                        span {
+                            padding: 0;
+                            color: $secondary-color;
+                            font-size: 20px;
+                        }
+
+                        a {
+                            color: #b4b4b4;
+                            padding: 0;
+                            width: 25px;
+                            font-size: 20px;
+                        }
+                    }
+
+                    .uk-active {
+                        span {
+                            color: $secondary-color;
+                            padding: 0;
+                            width: 25px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,440 @@
+@import "../vars";
+
+.venda-detalhada {
+	background-color: #ededed;
+	padding-top: 88px;
+
+	.figure-header {
+		height: 610px;
+
+		@include tablet_small_down {
+			height: 315px;
+		}
+
+		@include mobile {
+			height: 300px;
+		}
+
+		@media screen and (max-width: 1600px) {
+			height: 400px;
+		}
+
+		@media screen and (max-width: 1366px) {
+			height: 380px;
+		}
+	}
+
+	.uk-container {
+		@include tablet_large {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+
+		@include tablet_small_down {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+	}
+
+	.bloco-informacoes {
+		.bloco-contato-whatsapp {
+			position: fixed;
+			z-index: 1;
+			bottom: 30px;
+			right: 30px;
+			width: 50px;
+
+            @include tablet_small_down {
+                bottom: 25px;
+                right: 25px;
+            }
+
+            @include mobile {
+                bottom: 20px;
+                right: 5%;
+            }
+		}
+
+		.titulo-pagina {
+			padding-top: 70px;
+			padding-bottom: 40px;
+			margin: 0;
+
+			@include mobile {
+				padding-top: 40px;
+			}
+
+			h1 {
+				font-size: 32px;
+				font-weight: 600;
+
+				@include tablet_small_down {
+					text-align: center;
+				}
+
+				@include mobile {
+					font-size: 26px;
+				}
+			}
+		}
+
+		.slide-informacoes {
+			margin: -50px -70px 20px;
+
+			@media (max-width: 1200px) {
+				margin: -50px 0 20px;
+			}
+
+			@media (max-width: 1024px) {
+				margin: -50px 0 20px;
+			}
+
+			@include mobile {
+				margin: -50px -25px 20px;
+			}
+
+			.swiper-container {
+				padding: 50px 70px 100px;
+
+				@include tablet_small_down {
+					padding: 50px 60px 80px;
+				}
+
+				@include mobile {
+					padding: 50px 20px 80px;
+				}
+
+				.swiper-wrapper {
+					.swiper-slide {
+						height: auto;
+
+						.uk-card {
+							padding: 40px;
+							min-height: 100%;
+							box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+							h2 {
+								font-size: 16px;
+								font-weight: 600;
+							}
+
+							p {
+								color: $secondary-color;
+								font-size: 12px;
+								font-weight: 400;
+								line-height: 20px;
+							}
+						}
+					}
+				}
+				.swiper-pagination {
+					bottom: 40px;
+
+					.swiper-pagination-bullet {
+						background-color: transparent;
+						border: 1px solid $secondary-color;
+						opacity: 1;
+					}
+
+					.swiper-pagination-bullet-active {
+						background-color: $secondary-color;
+					}
+
+					@include desktop_small {
+						//bottom:90px;
+					}
+
+					@include tablet_large {
+						//bottom:20px;
+					}
+
+					@include tablet_small_down {
+						//bottom:0;
+						//left:unset;
+					}
+				}
+			}
+		}
+
+		.uk-card {
+			padding: 40px;
+			box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.25);
+
+			h2 {
+				font-size: 16px;
+				font-weight: 600;
+			}
+
+			p {
+				color: $secondary-color;
+				font-size: 12px;
+				max-width: 195px;
+				font-weight: 400;
+				line-height: 20px;
+
+				@include tablet_small_down {
+					max-width: unset;
+				}
+			}
+		}
+
+		.melhor-jato {
+			padding-top: 30px;
+			padding-bottom: 100px;
+
+			@include tablet_small_down {
+				padding-bottom: 40px;
+			}
+
+			h3 {
+				font-size: 32px;
+				line-height: 38px;
+				text-transform: uppercase;
+
+				@include mobile {
+					font-size: 26px;
+					line-height: 32px;
+				}
+
+				@include tablet_small_down {
+					text-align: center;
+				}
+
+				@include desktop {
+					max-width: 455px;
+				}
+			}
+
+			p {
+				font-size: 14px;
+				line-height: 22px;
+
+				@include tablet_small_down {
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.bloco-conteudo {
+		background-color: #ededed;
+
+		p {
+			font-size: 16px;
+			font-weight: bold;
+			max-width: 595px;
+			padding: 73px 0;
+
+			@include tablet_small_down {
+				max-width: unset;
+				text-align: center;
+			}
+		}
+
+		.uk-container {
+			@include tablet_small_down {
+				padding: 0;
+			}
+		}
+
+		.conteudo {
+			@include tablet_small_down {
+				flex-direction: column;
+				width: 100%;
+				margin-bottom: 40px !important;
+			}
+
+			figure {
+				@include tablet_large {
+					width: 100%;
+				}
+
+				@include tablet_small_down {
+					width: 100%;
+				}
+
+				img {
+					@include tablet_large {
+						width: 100%;
+					}
+
+					@include tablet_small_down {
+						width: 100%;
+					}
+				}
+			}
+
+			.uk-card {
+				color: $secondary-color;
+				padding: 80px;
+
+				@include desktop_small {
+					padding: 60px;
+				}
+
+				@include tablet_large {
+					padding: 25px;
+					width: 95%;
+				}
+
+				@include tablet_small_down {
+					padding: 30px;
+				}
+
+				@include mobile {
+					padding: 25px;
+				}
+
+				@media screen and (max-width: 1024px) {
+					height: 297px;
+				}
+
+				@media screen and (max-width: 992px) {
+					height: 287px;
+				}
+
+				@media screen and (max-width: 768px) {
+					height: unset;
+				}
+
+				h3 {
+					font-size: 32px;
+					font-weight: 600;
+					margin-bottom: 20px;
+
+					@include tablet_small_down {
+						text-align: center;
+						margin-bottom: 15px;
+					}
+
+					@include mobile {
+						font-size: 26px;
+					}
+				}
+
+				p {
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 22px;
+					padding: 0;
+					color: #737373;
+				}
+			}
+		}
+	}
+
+	.bloco-performance {
+		padding: 80px;
+		background-color: #2d2d2d;
+
+		@include tablet_large {
+			padding: 80px 24px;
+		}
+
+		@include tablet_small_down {
+			padding: 40px;
+		}
+
+		.uk-grid {
+			@include tablet_small_down {
+				display: flex;
+				justify-content: center;
+				text-align: center;
+
+				.uk-first-column {
+					display: block;
+				}
+			}
+		}
+
+		.uk-padding {
+			padding: 0 0 0 80px;
+
+			@include desktop_small {
+				padding: 0 0 0 50px;
+			}
+
+			@include tablet_large {
+				padding: 0;
+			}
+
+			@include tablet_small_down {
+				padding: 0;
+			}
+		}
+
+		h4 {
+			font-size: 32px;
+			color: $primary-color;
+			margin-bottom: 20px;
+
+			@include tablet_small_down {
+				text-align: center;
+				font-size: 26px;
+			}
+		}
+
+		p {
+			font-size: 14px;
+			color: #898989;
+
+			@include tablet_small_down {
+				padding: 0;
+			}
+		}
+
+		span {
+			color: $primary-color;
+		}
+
+		.uk-card-body {
+			padding: 20px 0;
+
+			.uk-text-emphasis {
+				font-size: 12px;
+				color: #898989 !important;
+				margin: 30px 0;
+			}
+		}
+
+		.uk-margin-left {
+			margin-left: 40px !important;
+		}
+	}
+
+	.bloco-contato {
+		background-color: #ededed;
+		padding: 75px 0;
+
+		@include tablet_small_down {
+			padding: 50px 0;
+		}
+
+		p {
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 22px;
+			padding: 0;
+			max-width: 595px;
+			margin: 0 auto;
+		}
+
+		button {
+			background-color: #000000;
+			border-radius: 100px;
+			margin-top: 60px;
+			padding: 0 82px;
+			line-height: 60px;
+			font-weight: 400 !important;
+
+			&:hover {
+				background-color: #000000;
+				text-decoration: underline;
+			}
+
+			@include tablet_small_down {
+				margin-top: 30px;
+			}
+		}
+	}
+}

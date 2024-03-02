@@ -1,0 +1,8 @@
+# General
+.idea
+/hot
+/node_modules
+/application/tmp/*
+
+# Assets generated
+common/default/

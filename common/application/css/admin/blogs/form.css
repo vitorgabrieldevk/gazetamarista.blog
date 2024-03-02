@@ -1,0 +1,10 @@
+.seo-preview { max-width:620px; margin:10px 0; font-size: 1rem; color:#303030; font-size:small; font-family:arial,sans-serif; font-weight:normal; }
+.seo-preview span.preview_title { color:#1a0dab; font-size:18px; display:block; }
+.seo-preview span.preview_link { color:#006621; font-size:14px; display:block; word-wrap:break-word; }
+.seo-preview span.preview_description { color:#545454; line-height:1.4; display:block; }
+
+.seo { margin-top:10px; line-height:25px; font-size: 1rem; color:#303030; }
+.seo p { font-weight:700; }
+.seo ul {list-style:none; padding:0; margin:0; }
+.seo li { padding-left: 16px;position: relative; }
+.seo span { position:absolute; top:6px; left:0px; width:8px; height:8px; background-color:#000; border-radius:50%; }

@@ -1,0 +1,273 @@
+.bloco-bases {
+	background-color: #ededed;
+	padding-top: 160px;
+	padding-bottom: 60px;
+
+	@include tablet_small_down {
+		padding-top: 120px;
+		padding-bottom: 30px;
+	}
+
+	.uk-container {
+		@include tablet_large_down {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+	}
+
+	.bloco-contato {
+		position: fixed;
+		z-index: 1;
+		bottom: 30px;
+		right: 30px;
+		width: 50px;
+
+		@include tablet_small_down {
+			bottom: 25px;
+			right: 25px;
+		}
+
+		@include mobile {
+			bottom: 20px;
+			right: 5%;
+		}
+	}
+
+	.bloco-header {
+		h1 {
+			font-size: 32px;
+			font-weight: 600;
+			text-transform: uppercase;
+			padding-bottom: 40px;
+
+			@include tablet_small_down {
+				text-align: center;
+				font-size: 26px;
+				padding-bottom: 30px;
+			}
+
+			@include mobile {
+				padding-bottom: 30px;
+			}
+		}
+	}
+
+	.conteudo {
+		> * {
+			&:first-child {
+				padding-bottom: 40px;
+			}
+		}
+
+		@include mobile {
+			> * {
+				&:first-child {
+					padding-bottom: 40px;
+				}
+			}
+		}
+
+		.uk-grid {
+			.uk-grid-margin {
+				margin: 0;
+			}
+
+			.bloco-base {
+				.uk-flex {
+					@include tablet_small_down {
+						background-color: #ededed;
+						flex-direction: column-reverse;
+						box-shadow: none;
+						align-items: center;
+					}
+				}
+
+				.base-nome {
+					@include desktop_small {
+						padding: 50px 20px 50px 49px !important;
+					}
+
+					@include tablet_small_down {
+						display: none;
+					}
+				}
+
+				.uk-padding {
+					padding: 50px;
+
+					@include desktop_small {
+						padding: 50px 20px;
+					}
+
+					@include tablet_large {
+						padding: 20px;
+					}
+
+					@include mobile {
+						padding: 30px;
+					}
+
+					h2 {
+						font-size: 24px;
+						font-weight: 600;
+						color: $secondary-color;
+						max-width: 200px;
+					}
+
+					a {
+						background-color: $secondary-color;
+						padding-top: 6px;
+						padding-bottom: 6px;
+						padding-left: 35px;
+						padding-right: 35px;
+						font-size: 14px;
+						font-weight: 400 !important;
+
+						&:hover {
+							text-decoration: underline;
+							transition: 0.3s ease-in-out;
+						}
+
+						@include tablet_large {
+							font-size: 14px;
+							padding: 5px 24px;
+						}
+					}
+
+					> * {
+						&:first-child {
+							padding-bottom: 35px;
+						}
+					}
+				}
+
+				.bloco-informacoes {
+					max-width: 330px;
+
+					@include tablet_large {
+						max-width: 250px;
+					}
+
+					@include tablet_small_down {
+						background-color: $primary-color;
+						max-width: unset;
+						width: 100%;
+					}
+
+					h2 {
+						display: none;
+
+						@include tablet_small_down {
+							display: flex;
+						}
+					}
+
+					a {
+						display: none;
+
+						@include tablet_small_down {
+							display: block;
+							margin-top: 30px;
+						}
+					}
+
+					> * {
+						&:first-child {
+							padding-bottom: 25px;
+						}
+					}
+
+					p {
+						font-size: 14px;
+						color: #737373;
+						line-height: 22px;
+						margin-bottom: 20px;
+
+						@include tablet_small_down {
+							margin-bottom: 20px;
+						}
+					}
+				}
+
+				figure {
+					@include tablet_small_down {
+						width: 100%;
+					}
+
+					img {
+						@include tablet_small_down {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			.bloco-facilidades,
+			.bloco-servicos {
+				@include mobile {
+					text-align: center;
+				}
+
+				.col-titulo {
+					width: 342px;
+
+					@include desktop_small {
+						width: 297px;
+					}
+
+					@include tablet_small {
+						width: 180px;
+					}
+
+					@include tablet_large {
+						width: 223px;
+						padding: 0;
+					}
+				}
+				.uk-card-default {
+					background-color: #2d2d2d;
+					color: $primary-color;
+					padding: 50px;
+
+					@include tablet_large {
+						padding: 50px 37px;
+					}
+
+					@include tablet_small_down {
+						padding-top: 30px;
+						padding-bottom: 15px;
+					}
+
+					h2 {
+						font-size: 24px;
+						font-weight: 600;
+						text-transform: uppercase;
+
+						@include mobile {
+							margin-bottom: 20px;
+						}
+
+						@include tablet_small {
+							font-size: 20px;
+						}
+					}
+
+					ul {
+						li {
+							font-size: 12px;
+							font-weight: 400;
+							margin-bottom: 15px;
+							padding-top: 6px;
+						}
+					}
+				}
+			}
+
+			.bloco-servicos {
+				.uk-card-default {
+					background-color: $secondary-color;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+/* inter-regular - latin */
+@font-face {
+	font-family: "inter";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/inter/hinted-Inter-Regular.woff2") format("woff2"),
+		url("../fonts/inter/hinted-Inter-Regular.woff") format("woff");
+}
+/* inter-700 - latin */
+@font-face {
+	font-family: "inter";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/inter/hinted-Inter-Bold.woff2") format("woff2"),
+		url("../fonts/inter/hinted-Inter-Bold.woff") format("woff");
+}
