@@ -438,7 +438,7 @@ input[type="text"][aria-invalid="true"], input[type="password"][aria-invalid="tr
 }
 
 input[type="text"][aria-invalid="false"], input[type="password"][aria-invalid="false"], input[type="date"][aria-invalid="false"], input[type="datetime"][aria-invalid="false"], input[type="datetime-local"][aria-invalid="false"], input[type="month"][aria-invalid="false"], input[type="week"][aria-invalid="false"], input[type="email"][aria-invalid="false"], input[type="number"][aria-invalid="false"], input[type="search"][aria-invalid="false"], input[type="tel"][aria-invalid="false"], input[type="time"][aria-invalid="false"], input[type="url"][aria-invalid="false"], input[type="color"][aria-invalid="false"], textarea[aria-invalid="false"]{
-	background-color:#f2fff6;,
+	background-color:#f2fff6;
 	border-color: #a8b9af !important;
 }
 
@@ -681,7 +681,7 @@ ul.pagination li.current button:focus {
 .accordion .accordion-navigation:not(:first-child) > a, .accordion:not(:first-child) dd > a,.accordion .accordion-navigation.active:not(:first-child) > a, .accordion dd.active:not(:first-child) > a { border-top:0 }
 .accordion .accordion-navigation > a:hover, .accordion dd > a:hover { background: #f2f2f3; color: #252c3d; }
 .accordion .accordion-navigation.active > a, .accordion dd.active > a { background: #39445a; color: #fff; border:1px solid #39445a; }
-.accordion .accordion-navigation.active > a:hover, .accordion dd.active > a:hover { background: #2a334; color: #fff; }
+.accordion .accordion-navigation.active > a:hover, .accordion dd.active > a:hover { background: #2a3341; color: #fff; }
 .accordion .accordion-navigation > .content, .accordion dd > .content { border:solid #bbb; background-color:#fff; border-width:0 1px 1px 1px; padding-bottom: 25px; }
 
 /* ============================================================================

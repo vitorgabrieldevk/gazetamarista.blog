@@ -1,1 +1,42 @@
 @import "../vars";
+
+#site-corpo {
+    margin: 40px 70px;
+
+    .title-slide {
+        font-size: 18px;
+        font-weight: 500;
+        user-select: none;
+        text-wrap: nowrap;
+    }
+
+    .swiper-slide {
+        text-align: center;
+    }
+
+    .currentPage {
+        font-weight: 700;
+    }
+
+    .swiper-pagination {
+        position: relative;
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+
+        .swiper-pagination-bullet-active {
+            border: 1px solid #000 !important;
+            background: #000 !important;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+            border: 1px solid #000;
+            background: transparent;
+        }
+    }
+}
