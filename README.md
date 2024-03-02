@@ -8,7 +8,6 @@
 # Iniciando o front
 
 ```
-    cd datacore.com.br
     npm i
     npm run prod (produção)
     npm run watch ou dev (desenvolvimento)
