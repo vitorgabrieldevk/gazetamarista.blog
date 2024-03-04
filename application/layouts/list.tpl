@@ -6,7 +6,7 @@
 				{if $esconderBtnNovo != true}
 					<li>
 						<a href="{$url}" class="button btn-new">
-							<i class="mdi mdi-plus-circle-outline"></i> Novo
+							<i class="mdi mdi-plus-circle-outline"></i> Adicionar
 						</a>
 					</li>
 				{/if}
@@ -25,7 +25,7 @@
 					{if $esconderBtnRemover != true}
 						<li>
 							<a href="{$urldata|utf8_encode}" class="button btn-remove alert">
-								<i class="mdi mdi-delete"></i> Remover
+								<i class="mdi mdi-delete"></i> Deletar
 							</a>
 						</li>
 					{/if}
@@ -33,13 +33,7 @@
 			{/if}
 
 			{if $paginator|count > 0}
-				{if $gerarxls !== false}
-					<li class="exportxls">
-						<a href="{$this->url(['module'=>'admin', 'controller'=>$controller, 'action'=>'exportarxls'], 'default', TRUE)}{$filtrosParam}" target="_blank" class="button">
-							<i class="mdi mdi-file-excel"></i> Exportar lista (xls)
-						</a>
-					</li>
-				{/if}
+				
 			{/if}
 
 			{if $esconderBtnFiltrar != true}
@@ -153,17 +147,15 @@
 									{/if}
 								{/foreach}
 
-								<td class="coluna-acoes" >
-
+								<!-- <td class="coluna-acoes" >
 									<a href="{$urlimprimir}" target="_blank" title="Visualizar"><i class="mdi mdi-printer btn-visualizar-individual"></i> </a>
-
 									{assign var="urlexcluirindividual" value=$this->CreateUrl("delete", NULL, NULL, [])|cat:'/'|cat:$primary|cat:'/'}
 									{if $_permitidoExcluir}
 										{if $esconderBtnRemover != true}
 											<a href="{$urlexcluirindividual|utf8_encode}" class="btn-remove-invidual" title="Excluir" data-id="{$primary}_{$row[$primary]}"><i class="mdi mdi-trash-can-outline btn-deletar-individual"></i></a>
 										{/if}
 									{/if}
-								</td>
+								</td> -->
 							</tr>
 						{/foreach}
 					{else}

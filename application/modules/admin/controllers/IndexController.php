@@ -26,46 +26,7 @@ class Admin_IndexController extends gazetamarista_Controller_Action {
 	 * Dashboard
 	 */
 	public function indexAction() {
-		// Busca totais
-        $model_usuarios = new Admin_Model_Usuarios();
-        $select = $model_usuarios->select()
-			->from($model_usuarios->getTableName(), array(""))
-			->columns(array(
-			    'qtd_noticia'   => new Zend_Db_Expr("(SELECT COUNT(idblog) FROM zend_blogs WHERE ativo = 1)"),
-			    'qtd_servico'   => new Zend_Db_Expr("(SELECT COUNT(idservico) FROM zend_servicos WHERE ativo = 1)"),
-			    'qtd_email'     => new Zend_Db_Expr("(SELECT COUNT(idemail) FROM zend_emails)"),
-                'qtd_contato'   => new Zend_Db_Expr("(SELECT COUNT(idcontato) FROM zend_contatos)")
-			))
-			->setIntegrityCheck(false);
-
-		$resumo = $model_usuarios->fetchRow($select);
-
-	    // Busca ultimos contatos
-        $model_contatos = new Admin_Model_Contatos();
-		$select = $model_contatos->select()
-			->from($model_contatos->getTableName(), array(""))
-			->columns(array("idcontato", "nome", "data", "visualizado"))
-			->order("idcontato DESC")
-			->limit(10)
-			->setIntegrityCheck(false);
-
-		$contatos = $model_contatos->fetchAll($select);
-
-		// Busca ultimos blogs
-        $model_blogs = new Admin_Model_Blogs();
-		$select = $model_blogs->select()
-			->from($model_blogs->getTableName(), array(""))
-			->columns(array("idblog", "titulo", "data", "ativo"))
-			->order("idblog DESC")
-			->limit(10)
-			->setIntegrityCheck(false);
-
-		$blogs = $model_blogs->fetchAll($select);
-
-		// Assina para o template
-		$this->view->resumo   = $resumo;
-		$this->view->contatos = $contatos;
-		$this->view->blogs    = $blogs;
+		
 	}
 
 	/**

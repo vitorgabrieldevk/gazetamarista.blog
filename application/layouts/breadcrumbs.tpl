@@ -1,20 +1,8 @@
 <ul class="breadcrumbs">
-    <li>
-    	<a href="{$this->url(['module'=>'admin', 'controller'=>'index', 'action'=>'index'], 'default', TRUE)}">Dashboard</a>
-    </li>
 
 	{if $this->pages|count > 0}
 		{assign var="page_name" value=''}
 		{foreach $this->pages as $key => $page}
-			{if $key < count($this->pages) - 1}
-				<li class="unavailable">
-					{$page->getLabel()}
-				</li>
-			{else}
-				<li>
-					<a href="{$page->getHref()|replace:'/form':'/list'}">{$page->getLabel()}</a>
-				</li>
-			{/if}
 			{assign var="page_name" value=$page->getLabel()}
 		{/foreach}
 	{else}

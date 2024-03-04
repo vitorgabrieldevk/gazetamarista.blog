@@ -40,64 +40,12 @@ class IndexController extends Zend_Controller_Action {
         
         $this->view->dominio = $this->dominio;
 
-        // Seta a sessão de linguagem
-        $this->linguagem 	= new Zend_Session_Namespace("linguagem");
-
-        switch ($this->linguagem->lingua) {
-        	case 'Espanhol':
-                $linguagem_tipo = 'es';
-                $cod_lingua = "_es";
-                break;
-
-            case 'Inglês':
-                $linguagem_tipo = 'en';
-                $cod_lingua = "_en";
-                break;
-
-            case 'Português':
-                $linguagem_tipo = 'pt_BR';
-                $cod_lingua = "";
-                break;
-
-            default:
-            	$this->linguagem->lingua = 'Português';
-                $linguagem_tipo = 'pt_BR';
-                $cod_lingua = "";
-                break;
-        }
-        $this->cod_lingua = $cod_lingua;
-
-        // Busca as traduções
-        $translate = Zend_Registry::get("translate");
-
-        // Captura a tradução
-        $this->traducao = $translate->getAdapter()->getMessages($linguagem_tipo);
-
         // View
         $this->view->linguagem       = $this->linguagem->lingua;
         $this->view->linguagem_tipo  = $cod_lingua;
         $this->view->translate       = $this->traducao;
     }
 
-    /**
-     * Ação para troca de linguagem
-     * Chama a tradução
-    */
-    public function linguagemAction() {
-        // Desabilita o template
-        $this->_helper->layout->disableLayout();
-        $this->_helper->viewRenderer->setNoRender(TRUE);
-
-        // Parâmetro linguagem
-        $linguagem = $this->sanitize->sanitizestring($this->_request->getParam("linguagem", ""), "search");
-
-        // Armazena a linguagem
-        $this->linguagem->lingua = $linguagem;
-
-        // Redireciona
-        $this->_redirect($_SERVER["HTTP_REFERER"]);
-    }
-    
     /**
      * Página inicial
      */
@@ -106,8 +54,12 @@ class IndexController extends Zend_Controller_Action {
         $config = Zend_Registry::get("config");
         $path = $config->gazetamarista->config->basepath;
 
-        // Assina na View ( index.tpl )
+        // Busca as Noticias
+        $noticias = (new Admin_Model_Blogs())->fetchAll(array("ativo = 1"), "data DESC");
+
+        // Assina na View
         $this->view->path = $path;
+        $this->view->noticias = $noticias;
 
     }
 
