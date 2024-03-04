@@ -108,13 +108,14 @@
 		<main id="site-corpo" class="pagina-{$currentAction}">
 			<div class="small-12 medium-8 large-8 columns LoginBanner">
 				<div class="ChamadaCenter">
-					<img src="{$basePath}\common\admin\images\rigth-admin-usuarios-login.png">
+					<img width="200px" src="{$basePath}\common\admin\images/logos\logo.png">
 				</div>
 			</div>
 			<div class="small-12 medium-4 large-4 columns formulario">
 				<div class="box">
 
-					<h1 class="title-painel">Painel Administrativo</h1>
+					<h1 class="title-painel" style="text-align: center;">Gazeta Marista</h1>
+					<h4 style="text-align: center;">Área Administrativa</h4>
 
 					<br><br><br>
 

@@ -3,10 +3,10 @@
 /**
  * Modelo da tabela de Clientes
  *
- * @name Admin_Model_Clientes
+ * @name Admin_Model_Parceiros
  * @see Zend_Db_Table_Abstract
  */
-class Admin_Model_Clientes extends gazetamarista_Db_Table {
+class Admin_Model_Parceiros extends gazetamarista_Db_Table {
 	/**
 	 * Armazena o nome da tabela
 	 *
@@ -59,9 +59,9 @@ class Admin_Model_Clientes extends gazetamarista_Db_Table {
 	 */
 	public function init() {
 		// Adiciona os campos ao model
-		$this->setCampo("titulo", "Título");
-		$this->setCampo("imagem", "Imagem", "200x140px [.jpg, .png]");
-		$this->setCampo("link", "Link");
+		$this->setCampo("titulo", "Nome Parceiro");
+		$this->setCampo("imagem", "Imagem | Logo", "200x140px [.jpg, .png]");
+		$this->setCampo("link", "Link de Redirecionamento");
 		$this->setCampo("ordem", "Ordem");
 		$this->setCampo("ativo", "Ativo?");
 		$this->setCampo("data", "Criado em");
@@ -80,7 +80,7 @@ class Admin_Model_Clientes extends gazetamarista_Db_Table {
 		$this->setModifier("imagem", array(
 			'type' => "file",
 			'preview' => "common/uploads/clientes",
-			'destination' => APPLICATION_PATH . "/../common/uploads/clientes"
+			'destination' => APPLICATION_PATH . "/../common/uploads/parceiros"
 		));
 
 		// Continua o carregamento do model

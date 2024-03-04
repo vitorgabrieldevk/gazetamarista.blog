@@ -105,7 +105,7 @@ class gazetamarista_Pagamentos_PagarMe extends gazetamarista_Pagamentos_Abstract
      */
     public function enviarAssinatura($parametros = ''){
         // Adiciona o model
-        $model_clientes = new Admin_Model_Clientes();
+        $model_clientes = new Admin_Model_Parceiros();
         $model_planos = new Admin_Model_Planos();
         $model_assinaturas = new Admin_Model_Assinaturas();
         $model_pagtos = new Admin_Model_Pagtos();
@@ -639,7 +639,7 @@ class gazetamarista_Pagamentos_PagarMe extends gazetamarista_Pagamentos_Abstract
 	 */
     public function enviarTransacao($parametros = ''){
         // Adiciona o model
-        $model_clientes = new Admin_Model_Clientes();
+        $model_clientes = new Admin_Model_Parceiros();
         $model_planos = new Admin_Model_Planos();
         $model_assinaturas = new Admin_Model_Assinaturas();
         $model_pagtos = new Admin_Model_Pagtos();

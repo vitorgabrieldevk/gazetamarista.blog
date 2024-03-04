@@ -6,7 +6,7 @@
  * @name Admin_Model_Servicos
  * @see Zend_Db_Table_Abstract
  */
-class Admin_Model_Servicos extends gazetamarista_Db_Table {
+class Admin_Model_Categorias extends gazetamarista_Db_Table {
 	/**
 	 * Armazena o nome da tabela
 	 *
@@ -14,7 +14,7 @@ class Admin_Model_Servicos extends gazetamarista_Db_Table {
 	 * @name $_name
 	 * @var string
 	 */
-	protected $_name = "zend_servicos";
+	protected $_name = "categorias";
 
 	/**
 	 * Armazena o nome do campo da tabela primaria
@@ -23,7 +23,7 @@ class Admin_Model_Servicos extends gazetamarista_Db_Table {
 	 * @name $_primary
 	 * @var string
 	 */
-	protected $_primary = "idservico";
+	protected $_primary = "idCategoria";
 
 	/**
 	 * Armazena se bloqueia manipulação dos dados
@@ -59,12 +59,8 @@ class Admin_Model_Servicos extends gazetamarista_Db_Table {
 	 */
 	public function init() {
 		// Adiciona os campos ao model
-        $this->setCampo("nome", "Nome do Redator");
-		$this->setCampo("imagem", "Imagem", "1920x615px [.jpg]");
-        $this->setCampo("biografia", "Biografia");
-        $this->setCampo("mensagem", "Mensagem do Autor");
-        $this->setCampo("telefone", "Telefone");
-        $this->setCampo("email", "E-mail");
+        $this->setCampo("nome", "Nome da Categoria");
+		$this->setCampo("cor", "Cor", "Cor para simbolizar a categoria");
 		$this->setCampo("ativo", "Ativo?");
 
 		// Seta o campo de descrição da tabela
@@ -72,20 +68,8 @@ class Admin_Model_Servicos extends gazetamarista_Db_Table {
 
 		// Seta visibilidade dos campos
 		$this->setVisibility("nome", TRUE, TRUE, TRUE, TRUE);
-		$this->setVisibility("imagem", TRUE, TRUE, TRUE, TRUE);
-		$this->setVisibility("biografia", TRUE, TRUE, TRUE, TRUE);
-		$this->setVisibility("mensagem", TRUE, TRUE, FALSE, FALSE);
-		$this->setVisibility("telefone", TRUE, TRUE, FALSE, FALSE);
-		$this->setVisibility("email", TRUE, TRUE, FALSE, FALSE);
+		$this->setVisibility("cor", TRUE, TRUE, TRUE, TRUE);
 		$this->setVisibility("ativo", FALSE, TRUE, FALSE, TRUE);
-
-		// Seta os modificadores
-        $this->setModifier("imagem", array(
-			'type' => "file",
-			'preview' => "common/uploads/redatores",
-			'destination' => APPLICATION_PATH . "/../common/uploads/redatores",
-            'extension' => array('jpg', 'jpeg', 'png')
-		));
 		
 		// Continua o carregamento do model
 		parent::init();

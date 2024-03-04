@@ -27,9 +27,7 @@ main.pagina-login div.box{
 	float: left;
 	height: 100vh;
 	background: #107c88; /* Old browsers */
-	background: -moz-linear-gradient(45deg,  #107c88 0%, #5e4092 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(45deg,  #107c88 0%,#5e4092 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(45deg,  #107c88 0%,#5e4092 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: #173963; /* FF3.6-15 */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#107c88', endColorstr='#5e4092',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 }
@@ -55,7 +53,7 @@ form .button{
 }
 form a{
 	display: inline-block;
-	color: #3C4A9E;
+	color: #173963;
 	margin-top: 10px;
 	text-align: center;
 	width: 100%;
@@ -66,7 +64,7 @@ form a:hover{
 }
 
 form input:focus{
-	border: 2px solid #3C4A9E !important;
+	border: 2px solid #173963 !important;
 }
 
 form input[type=text], form input[type=password] {}

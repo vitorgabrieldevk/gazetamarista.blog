@@ -96,10 +96,10 @@ class Admin_Model_Usuarios extends gazetamarista_Db_Table {
 	public function init() {
 		// Adiciona os campos ao model
 		$this->setCampo("nome", "Nome");
+		$this->setCampo("idperfil", "Perfil");
 		$this->setCampo("email", "E-mail");
 		$this->setCampo("login", "Login");
 		$this->setCampo("senha", "Senha", "Informe somente para alterar a senha atual");
-		$this->setCampo("idperfil", "Perfil");
 
 		// Seta o campo de descrição da tabela
 		$this->setDescription("nome");

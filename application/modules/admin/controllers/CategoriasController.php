@@ -5,13 +5,13 @@
  *
  * @name Admin_ServicosController
  */
-class Admin_ServicosController extends gazetamarista_Controller_Action {
+class Admin_CategoriasController extends gazetamarista_Controller_Action {
 	/**
 	 * Armazena o model padrão da tela
 	 *
 	 * @access protected
 	 * @name $_model
-	 * @var Admin_Model_Servicos
+	 * @var Admin_Model_Categorias
 	 */
 	protected $_model = NULL;
 
@@ -22,7 +22,7 @@ class Admin_ServicosController extends gazetamarista_Controller_Action {
 	 */
 	public function init() {
 		// Inicializa o model da tela
-		$this->_model = new Admin_Model_Servicos();
+		$this->_model = new Admin_Model_Categorias();
 
 		// Busca a sessão do login
 		$this->session  = new Zend_Session_Namespace("loginadmin");
@@ -42,7 +42,7 @@ class Admin_ServicosController extends gazetamarista_Controller_Action {
 	public function doBeforeList($select) {
 		// Monta a query
 		$select
-			->order("nome ASC");
+			->order("idCategoria ASC");
 
 		// Continua a execução
 		return $select;
@@ -55,7 +55,7 @@ class Admin_ServicosController extends gazetamarista_Controller_Action {
 	 */
 	public function doBeforeDelete(){
 		// Busca o parametro
-		$id = $this->_request->getParam("idservico", 0);
+		// $id = $this->_request->getParam("idservico", 0);
 
 		// if($id > 0) {
 		// 	// Verifica se é o serviço travado no menu

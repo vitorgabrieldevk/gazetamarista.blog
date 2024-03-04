@@ -93,7 +93,7 @@ abstract class gazetamarista_Pagamentos_Abstract {
 		$this->_pedido = $model->fetchRow(array('idpedido = ?' => $this->_idpedido));
 		
 		// Recupera as informações do cliente logado
-		$this->_cliente = $this->_pedido->findParentRow("Admin_Model_Clientes");
+		$this->_cliente = $this->_pedido->findParentRow("Admin_Model_Parceiros");
 		
 		// Armazena a forma de pagamento
 		$this->_idmetodo_pagamento = $this->_request->getParam("forma_pagamento", 0);

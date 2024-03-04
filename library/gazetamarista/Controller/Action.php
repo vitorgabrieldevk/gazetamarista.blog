@@ -1715,7 +1715,7 @@ class gazetamarista_Controller_Action extends Zend_Controller_Action {
                     if($this->_model->getTableName() == "clientes") {
                         // Endereço de cobrança
                         if($item['col_label'] == 'Endereço da cobraça') {
-                            $model_enderecos = new Admin_Model_Clientesenderecos();
+                            $model_enderecos = new Admin_Model_Parceirosenderecos();
                             $select_cobranca = $model_enderecos->select()
                                 ->where("idcliente = ?", $dado->idcliente)
                                 ->where("tipo = 'cobranca'")
@@ -1734,7 +1734,7 @@ class gazetamarista_Controller_Action extends Zend_Controller_Action {
 
                         // Endereços de entrega
                         if($item['col_label'] == 'Endereço da entrega') {
-                            $model_enderecos = new Admin_Model_Clientesenderecos();
+                            $model_enderecos = new Admin_Model_Parceirosenderecos();
                             $select_entregas = $model_enderecos->select()
                                 ->where("idcliente = ?", $dado->idcliente)
                                 ->where("tipo = 'entrega'")
@@ -2206,7 +2206,7 @@ class gazetamarista_Controller_Action extends Zend_Controller_Action {
         // Se for clientes, adiciona extras
         if($this->_model->getTableName() == "clientes") {
             // Seleciona endereços
-	        $model_enderecos = new Admin_Model_Clientesenderecos();
+	        $model_enderecos = new Admin_Model_Parceirosenderecos();
 	        $select_enderecos = $model_enderecos->select()
 	            ->where("idcliente = ?", $idregistro)
 	            ->order("tipo ASC")

@@ -309,7 +309,7 @@ class Zend_Controller_Plugin_Broker extends Zend_Controller_Plugin_Abstract
                 $plugin->preDispatch($request);
             } catch (Exception $e) {
                 if (Zend_Controller_Front::getInstance()->throwExceptions()) {
-                    throw new Zend_Controller_Exception($e->getMessage() . $e->getTraceAsString(), $e->getCode(), $e);
+                    // throw new Zend_Controller_Exception($e->getMessage() . $e->getTraceAsString(), $e->getCode(), $e);
                 } else {
                     $this->getResponse()->setException($e);
 					// skip rendering of normal dispatch give the error handler a try
@@ -332,11 +332,11 @@ class Zend_Controller_Plugin_Broker extends Zend_Controller_Plugin_Abstract
             try {
                 $plugin->postDispatch($request);
             } catch (Exception $e) {
-                if (Zend_Controller_Front::getInstance()->throwExceptions()) {
-                    throw new Zend_Controller_Exception($e->getMessage() . $e->getTraceAsString(), $e->getCode(), $e);
-                } else {
-                    $this->getResponse()->setException($e);
-                }
+                // if (Zend_Controller_Front::getInstance()->throwExceptions()) {
+                //     throw new Zend_Controller_Exception($e->getMessage() . $e->getTraceAsString(), $e->getCode(), $e);
+                // } else {
+                //     $this->getResponse()->setException($e);
+                // }
             }
         }
     }

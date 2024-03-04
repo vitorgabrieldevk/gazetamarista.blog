@@ -90,7 +90,7 @@ class gazetamarista_Pagamentos_Pagseguro extends gazetamarista_Pagamentos_Abstra
 
 		// Adiciona o model
 		$model_animais = new Admin_Model_Clubeanimais();
-		$model_clientes_enderecos = new Admin_Model_Clientesenderecos();
+		$model_clientes_enderecos = new Admin_Model_Parceirosenderecos();
 		$model_planos			= new Admin_Model_Planos();
 		$model_clubeassinaturas	= new Admin_Model_Clubeassinaturas();
 
@@ -485,8 +485,8 @@ class gazetamarista_Pagamentos_Pagseguro extends gazetamarista_Pagamentos_Abstra
      */
     public function enviarTransacao($IdPedido, $FormaPagamento, $Parametros){
         // Adiciona o model
-        $model_clientes             = new Admin_Model_Clientes();
-        $model_clientes_enderecos   = new Admin_Model_Clientesenderecos();
+        $model_clientes             = new Admin_Model_Parceiros();
+        $model_clientes_enderecos   = new Admin_Model_Parceirosenderecos();
         $model_cupons               = new Admin_Model_Cupons();
         $model_pedidos              = new Admin_Model_Pedidos();
         $model_pedidos_produtos     = new Admin_Model_Pedidosprodutos();
