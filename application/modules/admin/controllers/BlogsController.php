@@ -99,4 +99,7 @@ class Admin_BlogsController extends gazetamarista_Controller_Action {
         // Retorno
         $this->_helper->json($resposta);
 	}
+
+	public function doAfterInsert($id) {
+	}
 }

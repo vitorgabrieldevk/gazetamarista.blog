@@ -1,97 +1,68 @@
 <main id="site-corpo" class="home">
-    <section class="bloco-categorias-topo">
-        <div class="slides" {literal} data-slide='{"autoplay":{"delay":500000}, "watchOverflow":false, "spaceBetween":25, "slidesPerView": 1, "breakpoints":{"1500":{"slidesPerView":7, "slidesPerGroup":7}, "1200":{"slidesPerView":6, "slidesPerGroup":6}, "900":{"slidesPerView":3, "slidesPerGroup":3}, "460":{"slidesPerView":2, "slidesPerGroup":2}  }}' {/literal}>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <h3 class="title-slide currentPage">Últimas Noticias</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Acontece na escola</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Londrina na visão</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Atualidades</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Fala Marista</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Quadrinhos</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Recomendados</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Tecnologia</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Trabalho</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Tecnologia</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Recomendados</h3>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3 class="title-slide">Quadrinhos</h3>
+
+    {if $categorias|count > 0}
+        <section class="bloco-categorias-topo">
+            <div class="slides" {literal} data-slide='{"autoplay":{"delay":500000}, "watchOverflow":false, "spaceBetween":25, "slidesPerView": 1, "breakpoints":{"1500":{"slidesPerView":7, "slidesPerGroup":7}, "1200":{"slidesPerView":6, "slidesPerGroup":6}, "900":{"slidesPerView":3, "slidesPerGroup":3}, "460":{"slidesPerView":2, "slidesPerGroup":2}  }}' {/literal}>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <h3 class="title-slide currentPage">Página Inicial</h3>
+                        </div>
+                        {foreach from=$categorias item="item"}
+                            <div class="swiper-slide">
+                                <h3 class="title-slide currentPage">{$item->nome}</h3>
+                            </div>
+                        {/foreach}
                     </div>
                 </div>
+                <div class="swiper-pagination"></div> 
             </div>
-            <div class="swiper-pagination"></div> 
-        </div>
-        <hr>    
-    </section>
+            <hr>    
+        </section>
+    {/if}
 
-    <section class="bloco-noticiasPrincipais">
-        <div class="left">
-            <div class="tipo">
-                <h3 class="text-tipo">Recomendados</h3>
-            </div>
-            <div class="info-noticia">
-                <div><span class="autor">Maria Eduarda Mendes</span> - <span class="data">13 de dezembro de 2023</span></div>
-                <h1 class="title-noticia">10ª EDIÇÃO DO MEET UP NO MARISTA ESCOLA SOCIAL IR. ACÁCIO FOI COM O EMPREENDEDOR MARLON PASCOAL</h1>
-            </div>
-            <img class="item-noticia-image" src="{$path}/common/default/images/index/placeholder.png" alt="Imagem da Noticia Principal">
-        </div>
-    </section>
+    {if $bannerNoticia|count > 0}
+        {foreach from=$noticias item="item"}
+            <section class="bloco-noticiasPrincipais">
+                <div class="left">
+                    <div class="tipo">
+                        <h3 class="text-tipo">{$item->categoria}</h3>
+                    </div>
+                    <div class="info-noticia">
+                        <div><span class="autor">{$item->autor}</span> - <span class="data">{$item->data}</span></div>
+                        <h1 class="title-noticia">{$item->titulo}</h1>
+                    </div>
+                    <img class="item-noticia-image" src="{$dominio}/common/uploads/blog/{$item->imagem}" alt="Imagem da Noticia Principal">
+                </div>
+            </section>
+        {/foreach}
+    {/if}
 
     <section class="containerMain">
-
-        <br><br><br><br>
-
-        <main class="container">
-          <section class="articles">
-              {foreach from=$noticias item="item"}
-                <article class="card-new-one">
-                  <div class="article-wrapper">
-                    <figure>
-                      <img src="{$dominio}/common/uploads/blog/{$item->imagem}" alt="Image News" />
-                    </figure>
-                    <div class="article-body">
-                      <h2 class="title-new-card-one">{$item->titulo}</h2>
-                      <p>{$item->texto}</p>
-                      <a href="newspaper/feed/edition-3/a-geracao-mais-defasada-no-mundo-da-leitura.html" class="read-more text-decoration-underline">
-                        Continuar Lendo <span class="sr-only">about this is some title</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                      </a>
+            <br><br><br><br>
+            <main class="container">
+            <section class="articles">
+                {foreach from=$noticias item="item"}
+                    <article class="card-new-one">
+                    <div class="article-wrapper">
+                        <figure>
+                        <img src="{$dominio}/common/uploads/blog/{$item->imagem}" alt="Image News" />
+                        </figure>
+                        <div class="article-body">
+                        <h2 class="title-new-card-one">{$item->titulo}</h2>
+                        <p>{$item->lide}</p>
+                        <a href="" class="read-more text-decoration-underline">
+                            Continuar Lendo <span class="sr-only">about this is some title</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        </div>
                     </div>
-                  </div>
-                </article>
-              {/foreach}
-          </section> 
-
-          <hr>
-    
-    
-    
-            <!-- --------------------------------------------------- | Recomendados |---------------------------------------- -->
-    
+                    </article>
+                {/foreach}
+            </section> 
+            <hr>
             <div class="row g-5">
                 <div class="col-md-8">
     

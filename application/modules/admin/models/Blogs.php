@@ -32,11 +32,12 @@ class Admin_Model_Blogs extends gazetamarista_Db_Table {
 	 */
 	public function init() {
 		// Adiciona os campos ao model
+		$this->setCampo("categoria", "Categoria da Noticia");
 		$this->setCampo("titulo", "Titulo da notícia");
 		$this->setCampo("lide", "Lide");
 		$this->setCampo("imagem", "Imagem capa", "Imagem 980x595px [.jpg]");
 		$this->setCampo("texto", "Texto");
-		$this->setCampo("autor", "Autor");
+		$this->setCampo("autor", "Redator");
 		$this->setCampo("tags", "Tags (PT)", "Separar por vírgula (,)");
 		$this->setCampo("data", "Data", "Data da postagem");
 		$this->setCampo("qtd_curtidas", "Curtidas");
@@ -50,6 +51,7 @@ class Admin_Model_Blogs extends gazetamarista_Db_Table {
 		$this->setDescription("titulo");
 
 		// Seta visibilidade dos campos
+		$this->setVisibility("categoria", TRUE, TRUE, TRUE, TRUE);
 		$this->setVisibility("titulo", TRUE, TRUE, TRUE, TRUE);
 		$this->setVisibility("lide", TRUE, TRUE, FALSE, FALSE, FALSE, array('data-ckeditor' => ''));
 		$this->setVisibility("imagem", TRUE, TRUE, FALSE, FALSE);
@@ -64,6 +66,10 @@ class Admin_Model_Blogs extends gazetamarista_Db_Table {
 		$this->setVisibility("meta_description", TRUE, TRUE, FALSE, FALSE, FALSE, array( 'nclass' => 'input-form small-12 medium-12 large-6 column end' ));
 		$this->setVisibility("ativo", FALSE, TRUE, FALSE, TRUE);
 		
+		// Seta o relacionamento
+		$this->setAutocomplete("categoria", "Admin_Model_Categorias");
+		$this->setAutocomplete("autor", "Admin_Model_Servicos");
+
 		// Seta os modificadores
 		$this->setModifier("imagem", array(
 			'type' => "file",

@@ -56,9 +56,13 @@ class IndexController extends Zend_Controller_Action {
 
         // Busca as Noticias
         $noticias = (new Admin_Model_Blogs())->fetchAll(array("ativo = 1"), "data DESC");
-
+        $categorias = (new Admin_Model_Categorias())->fetchAll(array("ativo = 1"), "idCategoria ASC");
+        $bannerNoticia = (new Admin_Model_Blogs())->fetchAll(array("ativo = 1"), "data DESC", "LIMIT 1");
+        
         // Assina na View
         $this->view->path = $path;
+        $this->view->bannerNoticia = $bannerNoticia;
+        $this->view->categorias = $categorias;
         $this->view->noticias = $noticias;
 
     }
