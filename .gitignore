@@ -11,4 +11,4 @@ common/default/
 # application/config/application.ini
 
 # Htaccess  file used by a virtual host
-.htaccess
+# .htaccess
