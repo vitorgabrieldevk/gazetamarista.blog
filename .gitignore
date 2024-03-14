@@ -8,7 +8,7 @@
 common/default/
 
 # File Config
-application/config/application.ini
+# application/config/application.ini
 
 # Htaccess  file used by a virtual host
 .htaccess
