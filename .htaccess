@@ -1,5 +1,5 @@
 # Seta as variaveis de ambiente
-SetEnv APPLICATION_ENV production
+SetEnv APPLICATION_ENV development
 SetEnv APPLICATION_DEBUG 0
 SetEnv APPLICATION_MAINTENANCE 0
 
